@@ -1,304 +1,720 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="author" content="Randolph HUANG" />
-  <title>Randolph's Mainpage</title>
-  <style>
-    html {
-      line-height: 1.7;
-      font-family: Georgia, serif;
-      font-size: 20px;
-      color: #1a1a1a;
-      background-color: #fdfdfd;
-    }
-    body {
-      margin: 0 auto;
-      max-width: 40em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      word-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
-    }
-    @media (max-width: 600px) {
-      body {
-        font-size: 0.9em;
-        padding: 1em;
+<html lang="en">
+  <head>
+    <title>Randolph&rsquo;s Mainpage</title>
+    <!-- 2021-03-14 Sun 17:53 -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="Org-mode" />
+    <meta name="author" content="Randolph HUANG" />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <style>
+      /* org mode styles on top of twbs */
+
+      html {
+        position: relative;
+        min-height: 100%;
       }
-    }
-    @media print {
+
       body {
+        font-size: 18px;
+        margin-bottom: 105px;
+      }
+
+      footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 101px;
+        background-color: #f5f5f5;
+      }
+
+      footer > div {
+        padding: 10px;
+      }
+
+      footer p {
+        margin: 0 0 5px;
+        text-align: center;
+        font-size: 16px;
+      }
+
+      #table-of-contents {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      blockquote p {
+        font-size: 18px;
+      }
+
+      pre {
+        font-size: 16px;
+      }
+
+      .footpara {
+        display: inline-block;
+      }
+
+      figcaption {
+        font-size: 16px;
+        color: #666;
+        font-style: italic;
+        padding-bottom: 15px;
+      }
+
+      /* from twbs docs */
+
+      .bs-docs-sidebar.affix {
+        position: static;
+      }
+      @media (min-width: 768px) {
+        .bs-docs-sidebar {
+          padding-left: 20px;
+        }
+      }
+
+      /* All levels of nav */
+      .bs-docs-sidebar .nav > li > a {
+        display: block;
+        padding: 4px 20px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #999;
+      }
+      .bs-docs-sidebar .nav > li > a:hover,
+      .bs-docs-sidebar .nav > li > a:focus {
+        padding-left: 19px;
+        color: #a1283b;
+        text-decoration: none;
         background-color: transparent;
-        color: black;
+        border-left: 1px solid #a1283b;
       }
-      p, h2, h3 {
-        orphans: 3;
-        widows: 3;
+      .bs-docs-sidebar .nav > .active > a,
+      .bs-docs-sidebar .nav > .active:hover > a,
+      .bs-docs-sidebar .nav > .active:focus > a {
+        padding-left: 18px;
+        font-weight: bold;
+        color: #a1283b;
+        background-color: transparent;
+        border-left: 2px solid #a1283b;
       }
-      h2, h3, h4 {
-        page-break-after: avoid;
+
+      /* Nav: second level (shown on .active) */
+      .bs-docs-sidebar .nav .nav {
+        display: none; /* Hide by default, but at >768px, show it */
+        padding-bottom: 10px;
       }
-    }
-    p {
-      margin-top: 1.7em;
-    }
-    a {
-      color: #1a1a1a;
-    }
-    a:visited {
-      color: #1a1a1a;
-    }
-    img {
-      max-width: 100%;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.7em;
-    }
-    ol, ul {
-      padding-left: 1.7em;
-      margin-top: 1.7em;
-    }
-    li > ol, li > ul {
-      margin-top: 0;
-    }
-    blockquote {
-      margin: 1.7em 0 1.7em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
-      font-style: italic;
-    }
-    code {
-      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
-      background-color: #f0f0f0;
-      font-size: 85%;
-      margin: 0;
-      padding: .2em .4em;
-    }
-    pre {
-      line-height: 1.5em;
-      padding: 1em;
-      background-color: #f0f0f0;
-      overflow: auto;
-    }
-    pre code {
-      padding: 0;
-      overflow: visible;
-    }
-    hr {
-      background-color: #1a1a1a;
-      border: none;
-      height: 1px;
-      margin-top: 1.7em;
-    }
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      overflow-x: auto;
-      display: block;
-    }
-    th, td {
-      border-bottom: 1px solid lightgray;
-      padding: 1em 3em 1em 0;
-    }
-    header {
-      margin-bottom: 6em;
-      text-align: center;
-    }
-    nav a:not(:hover) {
-      text-decoration: none;
-    }
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
-  </style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
-</head>
-<body>
-<header id="title-block-header">
-<h1 class="title">Randolph's Mainpage</h1>
-<p class="author">Randolph HUANG</p>
-</header>
-<style>
-  input[type=text], select {
-  width: 70%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
+      .bs-docs-sidebar .nav .nav > li > a {
+        padding-top: 1px;
+        padding-bottom: 1px;
+        padding-left: 30px;
+        font-size: 12px;
+        font-weight: normal;
+      }
+      .bs-docs-sidebar .nav .nav > li > a:hover,
+      .bs-docs-sidebar .nav .nav > li > a:focus {
+        padding-left: 29px;
+      }
+      .bs-docs-sidebar .nav .nav > .active > a,
+      .bs-docs-sidebar .nav .nav > .active:hover > a,
+      .bs-docs-sidebar .nav .nav > .active:focus > a {
+        padding-left: 28px;
+        font-weight: 500;
+      }
 
-input[type=submit] {
-  width: 20%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  }
+      /* Nav: third level (shown on .active) */
+      .bs-docs-sidebar .nav .nav .nav {
+        padding-bottom: 10px;
+      }
+      .bs-docs-sidebar .nav .nav .nav > li > a {
+        padding-top: 1px;
+        padding-bottom: 1px;
+        padding-left: 40px;
+        font-size: 12px;
+        font-weight: normal;
+      }
+      .bs-docs-sidebar .nav .nav .nav > li > a:hover,
+      .bs-docs-sidebar .nav .nav .nav > li > a:focus {
+        padding-left: 39px;
+      }
+      .bs-docs-sidebar .nav .nav .nav > .active > a,
+      .bs-docs-sidebar .nav .nav .nav > .active:hover > a,
+      .bs-docs-sidebar .nav .nav .nav > .active:focus > a {
+        padding-left: 38px;
+        font-weight: 500;
+      }
 
-  input[type=submit]:hover {
-  background-color: #45a049;
-  }
+      /* Show and affix the side nav when space allows it */
+      @media (min-width: 992px) {
+        .bs-docs-sidebar .nav > .active > ul {
+          display: block;
+        }
+        /* Widen the fixed sidebar */
+        .bs-docs-sidebar.affix,
+        .bs-docs-sidebar.affix-bottom {
+          width: 213px;
+        }
+        .bs-docs-sidebar.affix {
+          position: fixed; /* Undo the static from mobile first approach */
+          top: 20px;
+        }
+        .bs-docs-sidebar.affix-bottom {
+          position: absolute; /* Undo the static from mobile first approach */
+        }
+        .bs-docs-sidebar.affix .bs-docs-sidenav,
+        .bs-docs-sidebar.affix-bottom .bs-docs-sidenav {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      }
+      @media (min-width: 1200px) {
+        /* Widen the fixed sidebar again */
+        .bs-docs-sidebar.affix-bottom,
+        .bs-docs-sidebar.affix {
+          width: 263px;
+        }
+      }
+    </style>
+    <script>
+      $(function () {
+        "use strict";
 
-  div {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
+        $(".bs-docs-sidebar li").first().addClass("active");
 
-textarea {
-  width: 100%;
-  height: 50px;
-  padding: 14px 20px;
-  box-sizing: border-box;
-  border: none;
-  border-radius: 4px;
-  background-color: #f8f8f8;
-  resize: none;
-}
-</style>
-<form action="https://www.baidu.com/s" method="GET" target="_blank">
-  <!-- <img src="http://www.baidu.com/img/baidu_jgylogo3.gif" alt="百度Logo" /> -->
-  <input style="width:500px;height:50px;font-size:24px" type="text" name="wd" />
-  <input style="width:200px;height:50px;font-size:24px" type="submit" value="百度一下" />
-  <input type="hidden" name="ie" value="utf-8" />
-  <input type="hidden" name="tn" value="ace" />
-</form>
-<form action="https://www.google.com/search" method="GET" target="_blank">
-  <input style="width:500px;height:50px;font-size:24px" type="text" name="q" />
-  <input style="width:200px;height:50px;font-size:24px" type="submit" value="Google" />
-  <input type="hidden" name="ie" value="utf-8" />
-  <input type="hidden" name="tn" value="ace" />
-</form>
+        $(document.body).scrollspy({ target: ".bs-docs-sidebar" });
 
-<h1 id="wip-stuff-to-continue">WIP stuff to continue</h1>
-<ul>
-<li>[ ] <a href="https://www.codewars.com/dashboard">codewars</a></li>
-<li>[ ] <a href="https://www.youtube.com/watch?v=SzA2YODtgK4&amp;list=WL">Getting started with org mode</a></li>
-</ul>
-<h1 id="work-links">Work Links</h1>
-<ul>
-<li><a href="http://imip.midea.com/main.html#/p/workbench">Midea IMIP Platform</a></li>
-<li><a href="http://confluence.msmart.com/pages/viewpage.action?pageId=38645897">Midea INC AI team confluence</a></li>
-<li><a href="http://cckm.midea.com/kbs/login?code=CODE_AUTHENTICATION_ERROR">Midea CC Knowledge Base (深蓝海域)</a></li>
-<li><a href="http://poc5.faqrobot.com/webadmin/#/layout">云问v5 PoC</a></li>
-</ul>
-<h1 id="personal-links">Personal Links</h1>
-<h2 id="github"><a href="https://github.com">GitHub</a></h2>
-<h2 id="daily-reading">Daily Reading</h2>
-<ul>
-<li><a href="https://sspai.com">少数派</a></li>
-<li><a href="https://www.smzdm.com">什么值得买</a></li>
-<li><a href="http://www.woshipm.com">人人都是产品经理</a></li>
-</ul>
-<h2 id="tools">Tools</h2>
-<h3 id="picicon-related">Pic/Icon related</h3>
-<ul>
-<li><a href="https://www.iconninja.com">iconninja</a></li>
-<li><a href="https://www.iconfinder.com">iconfinder</a></li>
-<li><a href="https://www.iconfont.cn">iconfont 阿里巴巴</a></li>
-<li><a href="http://616pic.com">图精灵图片素材</a></li>
-<li><a href="http://transcode.imperial-vision.com:8080/web/transcode/image">AI 画质增强云服务</a></li>
-<li><a href="https://bigjpg.com">bigjpg AI 图片放大</a></li>
-<li><a href="https://www.yasuotu.com/fanse">图压缩-图片压缩</a></li>
-<li><a href="https://wordart.com/create">wordart词云生成</a></li>
-</ul>
-<h3 id="product">Product</h3>
-<ul>
-<li><a href="http://www.aldzs.com">阿拉丁小程序互联网洞察平台</a></li>
-<li><a href="https://www.appannie.com/cn/">appannie 移动App分析平台</a></li>
-<li><a href="https://www.qimai.cn/?qm_query=1">七麦数据（原ASO100）App分析平台</a></li>
-<li><a href="http://www.gsdata.cn">清博大数据：微信、头条、抖音榜单分析</a></li>
-<li><a href="https://www.newrank.cn/public/info/list.html?period=day&amp;type=data">新榜：内容产业服务平台</a></li>
-<li><a href="https://www.iresearch.com.cn">艾瑞咨询</a></li>
-<li><a href="https://www.ilovepdf.com/zh-cn/unlock_pdf">PDF密码解锁</a></li>
-</ul>
-<h3 id="network">Network</h3>
-<ul>
-<li><a href="https://store.cloudss.org/index.php">CloudSS VPN</a></li>
-</ul>
-<h2 id="apple-product">Apple product</h2>
-<ul>
-<li><a href="http://www.sdifen.com">史蒂芬周的Mac软件博客</a></li>
-<li><a href="https://www.applex.net">极限苹果Mac软件论坛</a></li>
-<li><a href="https://xclient.info">xclient精品Mac应用</a></li>
-<li><a href="https://toptips.vip/a/category/tips">TopTips Mac相关技巧</a></li>
-<li><a href="https://jiejingku.net">捷径库</a></li>
-<li><a href="https://sharecuts.cn">捷径社区</a></li>
-<li><a href="https://developer.apple.com/library/archive/navigation/#section=Topics&amp;topic=Apple%20Applications">苹果官方开发文档</a></li>
-</ul>
-<h2 id="电子书">电子书</h2>
-<ul>
-<li><a href="http://cn.epubee.com">ePUBee在线电子书</a></li>
-<li><a href="https://zh.z-lib.org">Z-Library PDF</a></li>
-<li><a href="http://www.qishus.com">奇书网TXT</a></li>
-<li><a href="https://www.aixdzs.com">爱下电子书TXT</a></li>
-<li><a href="http://www.kindlecomic.net">Kindle漫画</a></li>
-</ul>
-<h2 id="emacs">Emacs</h2>
-<h3 id="emacs-books">Emacs Books</h3>
-<ul>
-<li><a href="https://emacs-china.org">Emacs-China Forum</a></li>
-<li><a href="http://book.emacs-china.org">紫龙山人：master Emacs in 21 days</a></li>
-<li><a href="https://orgmode.org/manual/">Org mode official manual</a></li>
-<li><a href="https://victor72.github.io/blog/2016/06/20/with-org-page-manage-lives/">Org-mode中文介绍</a></li>
-<li><a href="http://ergoemacs.org/index.html">Xah Emacs Site</a></li>
-</ul>
-<h3 id="emacs-配置">Emacs 配置</h3>
-<ul>
-<li><a href="https://github.com/condy0919/.emacs.d">condy0919的emacs配置</a></li>
-<li><a href="https://github.com/angrybacon/dotemacs/blob/master/dotemacs.org#markdown">angrybacon的emacs配置</a></li>
-<li><a href="https://github.com/purcell/emacs.d">purcell的emacs配置</a></li>
-<li><a href="https://github.com/howardabrams/dot-files">howardabrams的emacs配置</a></li>
-<li><a href="https://github.com/seagle0128/.emacs.d">seagle0128的emacs配置</a></li>
-<li><a href="https://pages.sachachua.com/.emacs.d/Sacha.html#streaming">Sacha的emacs配置</a></li>
-<li><a href="https://github.com/kaushalmodi/.emacs.d">kushalmodi的emacs配置</a></li>
-<li><a href="http://home.thep.lu.se/~karlf/emacs.html#sec-5">另一个大牛的emacs配置</a></li>
-</ul>
-<h3 id="emacs-videos-and-broadcast">Emacs Videos and Broadcast</h3>
-<ul>
-<li><a href="https://cestlaz.github.io/stories/emacs/">Mike Zamansky's Using Emacs Series Videos</a></li>
-<li><a href="https://emacscast.org">EmacsCast Podcast</a></li>
-<li><a href="http://emacsrocks.com">EmacsRocks</a></li>
-</ul>
-<h2 id="ai-related-links">AI related links</h2>
-<ul>
-<li><a href="https://stanfordnlp.github.io/stanfordnlp/index.html">Stanford NLP Python Library</a></li>
-<li><a href="http://ltp.ai/demo.html">哈工大NLP在线演示</a></li>
-<li><a href="https://tech.meituan.com">美团技术团队</a></li>
-</ul>
-<p>图谱</p>
-<ul>
-<li><a href="http://openkg.cn/home">OpenKG</a></li>
-<li><a href="http://openbase.ai">OpenBase.AI</a></li>
-</ul>
-<h2 id="programing">Programing</h2>
-<ul>
-<li><a href="https://www.runoob.com">runoob菜鸟教程：编程语言学习</a></li>
-</ul>
-<h2 id="windows-platform">Windows platform</h2>
-<ul>
-<li><a href="https://msdn.itellyou.cn">iTellYou Windows操作系统下载</a></li>
-</ul>
-<h2 id="others">Others</h2>
-<ul>
-<li><a href="https://www.16xx8.com/photoshop/xinshoujiaocheng/rumen/">PS教程自学网</a></li>
-</ul>
-</body>
+        $(".bs-docs-sidebar").affix();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="content" class="container">
+      <div class="row">
+        <div class="col-md-3 col-md-push-9">
+          <nav id="table-of-contents">
+            <div id="text-table-of-contents" class="bs-docs-sidebar">
+              <ul class="nav">
+                <li><a href="#sec-1">1. stuff to continue</a></li>
+                <li><a href="#sec-2">2. Work Links</a></li>
+                <li>
+                  <a href="#sec-3">3. Personal Links</a>
+                  <ul class="nav">
+                    <li><a href="#sec-3-1">3.1. GitHub</a></li>
+                    <li><a href="#sec-3-2">3.2. Daily Reading</a></li>
+                    <li><a href="#sec-3-3">3.3. Tools</a></li>
+                    <li><a href="#sec-3-4">3.4. Apple product</a></li>
+                    <li><a href="#sec-3-5">3.5. 电子书</a></li>
+                    <li><a href="#sec-3-6">3.6. Emacs</a></li>
+                    <li><a href="#sec-3-7">3.7. AI related links</a></li>
+                    <li><a href="#sec-3-8">3.8. Programing</a></li>
+                    <li><a href="#sec-3-9">3.9. Windows platform</a></li>
+                    <li><a href="#sec-3-10">3.10. Others</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="col-md-9 col-md-pull-3">
+          <h1 class="title">Randolph&rsquo;s Mainpage</h1>
+          <style>
+            input[type="text"],
+            select {
+              width: 70%;
+              padding: 12px 20px;
+              margin: 8px 0;
+              display: inline-block;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+            }
+
+            input[type="submit"] {
+              width: 20%;
+              background-color: #4caf50;
+              color: white;
+              padding: 14px 20px;
+              margin: 8px 0;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+            }
+
+            input[type="submit"]:hover {
+              background-color: #45a049;
+            }
+
+            div {
+              border-radius: 5px;
+              background-color: #f2f2f2;
+              padding: 20px;
+            }
+
+            textarea {
+              width: 100%;
+              height: 50px;
+              padding: 14px 20px;
+              box-sizing: border-box;
+              border: none;
+              border-radius: 4px;
+              background-color: #f8f8f8;
+              resize: none;
+            }
+          </style>
+          <form action="https://www.baidu.com/s" method="GET" target="_blank">
+            <!-- <img src="http://www.baidu.com/img/baidu_jgylogo3.gif" alt="百度 Logo" /> -->
+            <input
+              style="width: 500px; height: 50px; font-size: 24px"
+              type="text"
+              name="wd"
+            />
+            <input
+              style="width: 200px; height: 50px; font-size: 24px"
+              type="submit"
+              value="百度一下"
+            />
+            <input type="hidden" name="ie" value="utf-8" />
+            <input type="hidden" name="tn" value="ace" />
+          </form>
+          <form
+            action="https://www.google.com/search"
+            method="GET"
+            target="_blank"
+          >
+            <input
+              style="width: 500px; height: 50px; font-size: 24px"
+              type="text"
+              name="q"
+            />
+            <input
+              style="width: 200px; height: 50px; font-size: 24px"
+              type="submit"
+              value="Google"
+            />
+            <input type="hidden" name="ie" value="utf-8" />
+            <input type="hidden" name="tn" value="ace" />
+          </form>
+          <div id="outline-container-sec-1" class="outline-2">
+            <h2 id="sec-1">
+              <span class="section-number-2">1</span>
+              <span class="label label-primary WIP">WIP</span> stuff to continue
+            </h2>
+            <div class="outline-text-2" id="text-1">
+              <ul class="org-ul">
+                <li>
+                  <code>[&#xa0;]</code>
+                  <a href="https://www.codewars.com/dashboard">codewars</a>
+                </li>
+                <li>
+                  <code>[&#xa0;]</code>
+                  <a
+                    href="https://www.youtube.com/watch?v=SzA2YODtgK4&amp;list=WL"
+                    >Getting started with org mode</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="outline-container-sec-2" class="outline-2">
+            <h2 id="sec-2">
+              <span class="section-number-2">2</span> Work Links
+            </h2>
+            <div class="outline-text-2" id="text-2">
+              <ul class="org-ul">
+                <li>
+                  <a href="http://imip.midea.com/main.html#/p/workbench"
+                    >Midea IMIP Platform</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="http://confluence.msmart.com/pages/viewpage.action?pageId=38645897"
+                    >Midea INC AI team confluence</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="http://cckm.midea.com/kbs/login?code=CODE_AUTHENTICATION_ERROR"
+                    >Midea CC Knowledge Base (深蓝海域)</a
+                  >
+                </li>
+                <li>
+                  <a href="http://poc5.faqrobot.com/webadmin/#/layout"
+                    >云问 v5 PoC</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="outline-container-sec-3" class="outline-2">
+            <h2 id="sec-3">
+              <span class="section-number-2">3</span> Personal Links
+            </h2>
+            <div class="outline-text-2" id="text-3"></div>
+            <div id="outline-container-sec-3-1" class="outline-3">
+              <h3 id="sec-3-1">
+                <span class="section-number-3">3.1</span>
+                <a href="https://github.com">GitHub</a>
+              </h3>
+            </div>
+            <div id="outline-container-sec-3-2" class="outline-3">
+              <h3 id="sec-3-2">
+                <span class="section-number-3">3.2</span> Daily Reading
+              </h3>
+              <div class="outline-text-3" id="text-3-2">
+                <ul class="org-ul">
+                  <li><a href="https://sspai.com">少数派</a></li>
+                  <li><a href="https://www.smzdm.com">什么值得买</a></li>
+                  <li><a href="http://www.woshipm.com">人人都是产品经理</a></li>
+                </ul>
+              </div>
+            </div>
+            <div id="outline-container-sec-3-3" class="outline-3">
+              <h3 id="sec-3-3">
+                <span class="section-number-3">3.3</span> Tools
+              </h3>
+              <div class="outline-text-3" id="text-3-3"></div>
+              <div id="outline-container-sec-3-3-1" class="outline-4">
+                <h4 id="sec-3-3-1">
+                  <span class="section-number-4">3.3.1</span> Pic/Icon related
+                </h4>
+                <div class="outline-text-4" id="text-3-3-1">
+                  <ul class="org-ul">
+                    <li><a href="https://www.iconninja.com">iconninja</a></li>
+                    <li><a href="https://www.iconfinder.com">iconfinder</a></li>
+                    <li>
+                      <a href="https://www.iconfont.cn">iconfont 阿里巴巴</a>
+                    </li>
+                    <li><a href="http://616pic.com">图精灵图片素材</a></li>
+                    <li>
+                      <a
+                        href="http://transcode.imperial-vision.com:8080/web/transcode/image"
+                        >AI 画质增强云服务</a
+                      >
+                    </li>
+                    <li><a href="https://bigjpg.com">bigjpg AI 图片放大</a></li>
+                    <li>
+                      <a href="https://www.yasuotu.com/fanse"
+                        >图压缩-图片压缩</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://wordart.com/create">wordart 词云生成</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div id="outline-container-sec-3-3-2" class="outline-4">
+                <h4 id="sec-3-3-2">
+                  <span class="section-number-4">3.3.2</span> Product
+                </h4>
+                <div class="outline-text-4" id="text-3-3-2">
+                  <ul class="org-ul">
+                    <li>
+                      <a href="http://www.aldzs.com"
+                        >阿拉丁小程序互联网洞察平台</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://www.appannie.com/cn/"
+                        >appannie 移动 App 分析平台</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://www.qimai.cn/?qm_query=1"
+                        >七麦数据（原 ASO100）App 分析平台</a
+                      >
+                    </li>
+                    <li>
+                      <a href="http://www.gsdata.cn"
+                        >清博大数据：微信、头条、抖音榜单分析</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.newrank.cn/public/info/list.html?period=day&amp;type=data"
+                        >新榜：内容产业服务平台</a
+                      >
+                    </li>
+                    <li><a href="https://www.iresearch.com.cn">艾瑞咨询</a></li>
+                    <li>
+                      <a href="https://www.ilovepdf.com/zh-cn/unlock_pdf"
+                        >PDF 密码解锁</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div id="outline-container-sec-3-3-3" class="outline-4">
+                <h4 id="sec-3-3-3">
+                  <span class="section-number-4">3.3.3</span> Network
+                </h4>
+                <div class="outline-text-4" id="text-3-3-3">
+                  <ul class="org-ul">
+                    <li>
+                      <a href="https://store.cloudss.org/index.php"
+                        >CloudSS VPN</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div id="outline-container-sec-3-4" class="outline-3">
+              <h3 id="sec-3-4">
+                <span class="section-number-3">3.4</span> Apple product
+              </h3>
+              <div class="outline-text-3" id="text-3-4">
+                <ul class="org-ul">
+                  <li>
+                    <a href="http://www.sdifen.com">史蒂芬周的 Mac 软件博客</a>
+                  </li>
+                  <li>
+                    <a href="https://www.applex.net">极限苹果 Mac 软件论坛</a>
+                  </li>
+                  <li><a href="https://xclient.info">xclient 精品 Mac 应用</a></li>
+                  <li>
+                    <a href="https://toptips.vip/a/category/tips"
+                      >TopTips Mac 相关技巧</a
+                    >
+                  </li>
+                  <li><a href="https://jiejingku.net">捷径库</a></li>
+                  <li><a href="https://sharecuts.cn">捷径社区</a></li>
+                  <li>
+                    <a
+                      href="https://developer.apple.com/library/archive/navigation/#section=Topics&amp;topic=Apple%20Applications"
+                      >苹果官方开发文档</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div id="outline-container-sec-3-5" class="outline-3">
+              <h3 id="sec-3-5">
+                <span class="section-number-3">3.5</span> 电子书
+              </h3>
+              <div class="outline-text-3" id="text-3-5">
+                <ul class="org-ul">
+                  <li><a href="http://cn.epubee.com">ePUBee 在线电子书</a></li>
+                  <li><a href="https://zh.z-lib.org">Z-Library PDF</a></li>
+                  <li><a href="http://www.qishus.com">奇书网 TXT</a></li>
+                  <li><a href="https://www.aixdzs.com">爱下电子书 TXT</a></li>
+                  <li><a href="http://www.kindlecomic.net">Kindle 漫画</a></li>
+                </ul>
+              </div>
+            </div>
+            <div id="outline-container-sec-3-6" class="outline-3">
+              <h3 id="sec-3-6">
+                <span class="section-number-3">3.6</span> Emacs
+              </h3>
+              <div class="outline-text-3" id="text-3-6"></div>
+              <div id="outline-container-sec-3-6-1" class="outline-4">
+                <h4 id="sec-3-6-1">
+                  <span class="section-number-4">3.6.1</span> Emacs Books
+                </h4>
+                <div class="outline-text-4" id="text-3-6-1">
+                  <ul class="org-ul">
+                    <li>
+                      <a href="https://emacs-china.org">Emacs-China Forum</a>
+                    </li>
+                    <li>
+                      <a href="http://book.emacs-china.org"
+                        >紫龙山人：master Emacs in 21 days</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://orgmode.org/manual/"
+                        >Org mode official manual</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://victor72.github.io/blog/2016/06/20/with-org-page-manage-lives/"
+                        >Org-mode 中文介绍</a
+                      >
+                    </li>
+                    <li>
+                      <a href="http://ergoemacs.org/index.html"
+                        >Xah Emacs Site</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div id="outline-container-sec-3-6-2" class="outline-4">
+                <h4 id="sec-3-6-2">
+                  <span class="section-number-4">3.6.2</span> Emacs 配置
+                </h4>
+                <div class="outline-text-4" id="text-3-6-2">
+                  <ul class="org-ul">
+                    <li>
+                      <a href="https://github.com/condy0919/.emacs.d"
+                        >condy0919 的 emacs 配置</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://github.com/angrybacon/dotemacs/blob/master/dotemacs.org#markdown"
+                        >angrybacon 的 emacs 配置</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://github.com/purcell/emacs.d"
+                        >purcell 的 emacs 配置</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://github.com/howardabrams/dot-files"
+                        >howardabrams 的 emacs 配置</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://github.com/seagle0128/.emacs.d"
+                        >seagle0128 的 emacs 配置</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://pages.sachachua.com/.emacs.d/Sacha.html#streaming"
+                        >Sacha 的 emacs 配置</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://github.com/kaushalmodi/.emacs.d"
+                        >kushalmodi 的 emacs 配置</a
+                      >
+                    </li>
+                    <li>
+                      <a href="http://home.thep.lu.se/~karlf/emacs.html#sec-5"
+                        >另一个大牛的 emacs 配置</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div id="outline-container-sec-3-6-3" class="outline-4">
+                <h4 id="sec-3-6-3">
+                  <span class="section-number-4">3.6.3</span> Emacs Videos and
+                  Broadcast
+                </h4>
+                <div class="outline-text-4" id="text-3-6-3">
+                  <ul class="org-ul">
+                    <li>
+                      <a href="https://cestlaz.github.io/stories/emacs/"
+                        >Mike Zamansky&rsquo;s Using Emacs Series Videos</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://emacscast.org">EmacsCast Podcast</a>
+                    </li>
+                    <li><a href="http://emacsrocks.com">EmacsRocks</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div id="outline-container-sec-3-7" class="outline-3">
+              <h3 id="sec-3-7">
+                <span class="section-number-3">3.7</span> AI related links
+              </h3>
+              <div class="outline-text-3" id="text-3-7">
+                <ul class="org-ul">
+                  <li>
+                    <a
+                      href="https://stanfordnlp.github.io/stanfordnlp/index.html"
+                      >Stanford NLP Python Library</a
+                    >
+                  </li>
+                  <li>
+                    <a href="http://ltp.ai/demo.html">哈工大 NLP 在线演示</a>
+                  </li>
+                  <li><a href="https://tech.meituan.com">美团技术团队</a></li>
+                </ul>
+              </div>
+              <div id="outline-container-sec-3-7-0-0-1" class="outline-6">
+                <h6 id="sec-3-7-0-0-1">
+                  <span class="section-number-6">3.7.0.0.1</span> 图谱
+                </h6>
+                <div class="outline-text-6" id="text-3-7-0-0-1">
+                  <ul class="org-ul">
+                    <li><a href="http://openkg.cn/home">OpenKG</a></li>
+                    <li><a href="http://openbase.ai">OpenBase.AI</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div id="outline-container-sec-3-8" class="outline-3">
+              <h3 id="sec-3-8">
+                <span class="section-number-3">3.8</span> Programing
+              </h3>
+              <div class="outline-text-3" id="text-3-8">
+                <ul class="org-ul">
+                  <li>
+                    <a href="https://www.runoob.com"
+                      >runoob 菜鸟教程：编程语言学习</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div id="outline-container-sec-3-9" class="outline-3">
+              <h3 id="sec-3-9">
+                <span class="section-number-3">3.9</span> Windows platform
+              </h3>
+              <div class="outline-text-3" id="text-3-9">
+                <ul class="org-ul">
+                  <li>
+                    <a href="https://msdn.itellyou.cn"
+                      >iTellYou Windows 操作系统下载</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div id="outline-container-sec-3-10" class="outline-3">
+              <h3 id="sec-3-10">
+                <span class="section-number-3">3.10</span> Others
+              </h3>
+              <div class="outline-text-3" id="text-3-10">
+                <ul class="org-ul">
+                  <li>
+                    <a
+                      href="https://www.16xx8.com/photoshop/xinshoujiaocheng/rumen/"
+                      >PS 教程自学网</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer id="postamble" class="">
+      <div>
+        <p class="author">Author: Randolph HUANG</p>
+        <p class="email">
+          Email:
+          <a href="mailto:xiaojianghuang@gmail.com">xiaojianghuang@gmail.com</a>
+        </p>
+        <p class="date">Created: 2021-03-14 Sun 17:53</p>
+        <p class="creator">
+          <a href="http://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a
+            href="http://orgmode.org"
+            >Org-mode</a
+          >
+          9.4.4)
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>
