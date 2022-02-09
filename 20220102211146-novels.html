@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>novels</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<header>
+<h1 class="title">novels</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org8378c44">1. 大奉打更人</a></li>
+<li><a href="#org8eb09df">2. 儒道至圣</a></li>
+<li><a href="#org3280aa2">3. 神魔书</a></li>
+</ul>
+</div>
+</nav>
+
+<div id="outline-container-org8378c44" class="outline-2">
+<h2 id="org8378c44"><span class="section-number-2">1.</span> 大奉打更人</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>作者：卖报小郎君</li>
+<li>主角：许七安</li>
+<li><p>
+内容介绍：
+警校毕业的许七安穿越到一个神奇的世界，这里有术士体系、巫师体系、道术体系、佛门体系还有武夫体系，许七安从一个小小的打更人铜锣开始做起，慢慢成长，在魏渊和监正的培养下，一步一步成为了绝世武神。刑警的经历让许七安的断案推理能力在这个世界显得那么无敌，而金莲道长的地书堪称极品外挂，气运乃至国运竟然可以被操控，且放入人的体内，想象力不可谓不丰富。
+</p>
+
+<p>
+断案不断，从小案到整个世界的大案谜团，从三品超凡到超品，故事层峦叠进，精彩万分。最终惊天大谜团竟然监正是天！成为了武神，就是成为了天的守门人，让天道“不仁”而至公。打败了佛陀、荒、巫神和蛊神这一系列超品，登顶世界。
+</p></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8eb09df" class="outline-2">
+<h2 id="org8eb09df"><span class="section-number-2">2.</span> 儒道至圣</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>作者：永恒之火</li>
+<li>主角：方运</li>
+<li><p>
+内容介绍：
+这是一个读书人掌握天地之力的世界，想象力极其丰富，诗词歌赋，精彩文章竟然可以当作力量，文宫、文胆、文心的这一套设定很有意思。方运从一个小小的童生，逐渐成长为一个圣人。
+</p>
+
+<p>
+想象力虽丰富，但主角一直如开挂般成长，从无败绩，到后期略显无聊。
+</p></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3280aa2" class="outline-2">
+<h2 id="org3280aa2"><span class="section-number-2">3.</span> 神魔书</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>作者：血红</li>
+<li>主角：乔·冯·威图</li>
+<li><p>
+内容介绍：
+乔·容·威图，从一个智商有点问题，警察中的小混子，在图伦港无法无天的胖子，到卷入仲秋之夜的某场阴谋，绯红眷顾，拉普拉希附身，从而开始了开挂式的 18 岁旅程。从图伦港到海德拉堡，从乔·容·威图，到乔·冯·威图，胖子逐步成长，靠着绯红和拉普拉希的眷顾，慢慢地进入了德伦帝国的核心圈，成了一名收到女皇和皇孙青睐的权臣。
+</p>
+
+<p>
+再到后面，卷入艾尔组织，艾尔国王的阴谋，渐渐引出艾尔更高层的人，梅德兰大陆的真相，深渊的入侵，从31级艾尔高层，到33级艾尔看门人，从半神，到古老的梅德兰神灵回归，故事越来越精彩，越来越宏大，事实的真相越来越惊悚。原来，梅德兰只是初代人类创建的避难所——吸附在大宇宙泡膜上的小世界，原来梅德兰只是逃避宇宙意志——全知者灭亡的乐土，而全知者灭亡人类的原因竟然是因为人类不可掌控，人类不可预测。诸神是梅德兰诞生时的法则所化，诸神不可被消灭，只可被流放。绯红是全知者创造的最强大的毁灭大君，只为毁灭人类而存在，而拉普拉希则是宇宙意志的投影。所幸的是，乔的灵魂并没有被绯红吞噬和同化，乔还存在。
+</p>
+
+<p>
+最后，乔，一个人类，通过他的智慧，引诱拉普拉希脱离宇宙意志全知者掌控，乔通过让绯红具有九头蛇的吞噬能力，让绯红吞噬了梅德兰的一众古神，乘机，乔的灵魂，和拉普拉希一起，从绯红中分离出来，手握梅德兰卷轴，流放了绯红、一众古神，梅德兰恢复到往日的平和。而乔，和拉普拉希，竟然策划着反攻宇宙意志。
+</p>
+
+<p>
+故事十分精彩，设定十分恢弘，层峦迭进，引人入胜，除了是以西文的风格来讲述故事略有不适，堪称佳作。
+</p></li>
+</ul>
+</div>
+</div>
+</div>
+</body>
+</html>
